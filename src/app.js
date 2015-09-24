@@ -16,7 +16,7 @@ var card = new UI.Card({
 card.show();
 
 Settings.config(
-    { url: 'http://pebble.acolyte.ws', autoSave: true },
+    { url: 'http://phlag.github.io/VeraControl', autoSave: true },
   function(e) {
     console.log('closed configurable');
 
