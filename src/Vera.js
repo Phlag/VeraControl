@@ -10,6 +10,7 @@ var ajax = require('ajax');
 var Settings = require('settings');
 
 var base64 = require('base64');
+var completedCallback;
 
 var Vera = {};
 
