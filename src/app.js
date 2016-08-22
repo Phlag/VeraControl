@@ -3,6 +3,7 @@
  */
 
 var Settings = require('settings');
+
 var Vera = require('Vera');
 var Main = require('Main');
 
@@ -15,7 +16,8 @@ app.show();
  */
 Settings.config(
     {url: 'http://phlag.github.io/VeraControl', autoSave: true },
-    function(e) {
+    function(e)
+    {
         console.log('closed configurable');
 
         // Show the parsed response
