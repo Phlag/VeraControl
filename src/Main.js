@@ -12,16 +12,13 @@ var Main = {};
 
 Main.app = function ()
 {
-    /* Instance of 'this' for reference. */
-    var self = this;
-
     /** Scenes. */
     var Scene = new Scene.menu();
     /** Lights. */
     var Light = new Light.menu();
 
     /** Menu */
-    self.menu = new UI.Menu({
+    this.menu = new UI.Menu({
         sections: [{
             items: [{
                 title: 'Scenes'
@@ -41,7 +38,7 @@ Main.app = function ()
         } else if (e.item.title == "Scenes") {
             Scene.show();
         } else if(e.item.title == "Refresh") {
-            Vera.getUserToken(Settings.option('username'), Settings.option('password'), self.refresh);
+            Vera.getUserToken(Settings.option('username'), Settings.option('password'), this.refresh);
         }
     });
 
@@ -51,7 +48,7 @@ Main.app = function ()
     this.show = function()
     {
         this.menu.show();
-    };
+    }
 
     /**
     * Refreshes all data/menus in the application.
@@ -83,12 +80,10 @@ Main.app = function ()
                     break;
             }
         }
-    };
+    }
 
-    // Refresh persisted data
-    //if (Settings.data('data')) this.refresh();
-    Vera.getUserToken(Settings.option('username'), Settings.option('password'), self.refresh);
-};
+    Vera.getUserToken(Settings.option('username'), Settings.option('password'), this.refresh);
+}
 
 /* Export javascript module for other files to access.  */
 if (typeof module != 'undefined' && module.exports) module.exports = Main; // CommonJs export
