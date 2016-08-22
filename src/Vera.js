@@ -64,3 +64,6 @@ Vera.getSessionToken = function(tokenData, server, callback)
         console.log('Failed getting session token: ' + error);
     });
 };
+
+if (typeof module != 'undefined' && module.exports) module.exports = Vera; // CommonJs export
+if (typeof define == 'function' && define.amd) define([], function() { return Vera; }); // AMD
