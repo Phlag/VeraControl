@@ -13,7 +13,7 @@ var Main = {};
 Main.app = function ()
 {
     /** Scenes. */
-    var Scene = new Scene.card();
+    var Scene = new Scene.Scene();
     /** Lights. */
     var Light = new Light.card();
 

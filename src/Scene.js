@@ -7,7 +7,7 @@ var Settings = require('settings');
 
 var Scene = {};
 
-Scene.card = function()
+Scene.Scene = function()
 {
     this.menu = new UI.Menu();
     this.itemCount = 0;
