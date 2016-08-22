@@ -13,9 +13,9 @@ var Main = {};
 Main.app = function ()
 {
     /** Scenes. */
-    var Scene = new Scene.menu();
+    var Scene = new Scene.card();
     /** Lights. */
-    var Light = new Light.menu();
+    var Light = new Light.card();
 
     /** Menu */
     this.menu = new UI.Menu({

@@ -6,7 +6,7 @@ var LightWindow = require('LightWindow');
 
 var Light = {};
 
-Light.menu = function()
+Light.card = function()
 {
     this.menu = new UI.Menu();
     this.itemCount = 0;
