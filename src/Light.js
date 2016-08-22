@@ -52,5 +52,5 @@ Light.menu = function()
 }
 
 /** Export javascript module for other files to use. */
-if (typeof module != 'undefined' && module.exports) module.exports = LightMenu; // CommonJs export
-if (typeof define == 'function' && define.amd) define([], function() { return LightMenu; }); // AMD
+if (typeof module != 'undefined' && module.exports) module.exports = Light; // CommonJs export
+if (typeof define == 'function' && define.amd) define([], function() { return Light; }); // AMD
