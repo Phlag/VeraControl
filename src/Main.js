@@ -13,9 +13,9 @@ var Main = {};
 Main.app = function ()
 {
     /** Scenes. */
-    var Scene = new Scene.Scene();
+    var scene = new Scene.card();
     /** Lights. */
-    var Light = new Light.card();
+    var light = new Light.card();
 
     /** Menu */
     this.menu = new UI.Menu({
@@ -34,9 +34,9 @@ Main.app = function ()
     this.menu.on('select', function(e)
     {
         if (e.item.title == "Lights") {
-            Light.show();
+            scene.show();
         } else if (e.item.title == "Scenes") {
-            Scene.show();
+            light.show();
         } else if(e.item.title == "Refresh") {
             Vera.getUserToken(Settings.option('username'), Settings.option('password'), this.refresh);
         }
@@ -56,8 +56,8 @@ Main.app = function ()
     this.refresh = function()
     {
         // Clear all the menus...
-        Light.clear();
-        Scene.clear();
+        light.clear();
+        scene.clear();
 
         // Get data
         var data = Settings.data('data');
@@ -65,7 +65,7 @@ Main.app = function ()
         // Get Scenes
         var scenes = data.scenes;
         for(var i = 0; i < scenes.length; i++) {
-            Scene.addItem(scenes[i].name, scenes[i].id);
+            scene.addItem(scenes[i].name, scenes[i].id);
         }
 
         // Get Devices
@@ -73,10 +73,10 @@ Main.app = function ()
         for(i = 0; i < devices.length; i++) {
             switch (devices[i].category) {
                 case 3:  //Binary Light
-                    Light.addItem(devices[i].name, devices[i].id, devices[i].category);
+                    light.addItem(devices[i].name, devices[i].id, devices[i].category);
                     break;
                 case 2:  //Dimmable Light
-                    Light.addItem(devices[i].name, devices[i].id, devices[i].category);
+                    light.addItem(devices[i].name, devices[i].id, devices[i].category);
                     break;
             }
         }
